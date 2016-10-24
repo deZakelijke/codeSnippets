@@ -28,6 +28,3 @@ def radixSort(unsortedList, digitIndex, base):
     if(digitIndex <= digits):
         buckets = radixSort(buckets,digitIndex+1, base) 
     return buckets
-
-sortedList = radixSort([23,54,12,71, 73, 44, 99],1,10)
-print(sortedList)
