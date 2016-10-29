@@ -5,13 +5,13 @@ def quickSort(array):
     if len(array) > 1:
         pivot = array[0]
         for x in array:
-            if x[2] < pivot[2]:
+            if x < pivot:
                 less.append(x)
-            if x[2] == pivot[2]:
+            if x == pivot:
                 equal.append(x)
-            if x[2] > pivot[2]:
+            if x > pivot:
                 greater.append(x)
-        return sort(less)+equal+sort(greater)  
+        return quickSort(less)+equal+quickSort(greater)  
     else:  
         return array
 
