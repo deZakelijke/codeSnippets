@@ -1,5 +1,11 @@
 # Made by micha de Groot
 # LSD Radix sort
+# Python cannot do negative integer radixsort. 
+# Integers do not have a fixed size, making it impssible (very hard)
+# to place negtive numbers of various sizes in the right bin.
+# Strings can be tried, however Unicode allows more than a million
+# different characters. This could require a million bins.
+# Only ASCII can be done easily
 
 import math
 
