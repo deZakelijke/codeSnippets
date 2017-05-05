@@ -1,6 +1,8 @@
 # Made by Micha de Groot
 # linked list for a single variable polynomial for complex numbers
 
+import sys
+#from data_structures.linked_list import linked_list
 # each node contains a degree-coefficient pair
 # save in descending order
 
@@ -14,6 +16,7 @@
 # operations needed:
 # init
 class Polynomial(object):
+    i = 0
     # head node of linked list
 
 # evaluate
