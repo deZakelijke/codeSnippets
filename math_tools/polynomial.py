@@ -2,9 +2,8 @@
 # linked list for a single variable polynomial for complex numbers
 
 import sys
-#from data_structures.linked_list import linked_list
-# each node contains a degree-coefficient pair
-# save in descending order
+# How do I import a module?
+
 
 # to add two polynomials simply add the coefficients of the nodes with the same degree
 # to multiply two polynomials store the product of two coefficients in node with
@@ -13,12 +12,26 @@ import sys
 # solve for value?
 # start with only quadratic functions
 
+class Polynomial:
+
+    def __init__(self, value_pairs):
+        self.linked_list = linked_list()
+        if not isinstance(value_pairs, list):
+            print('Not a valid argument')
+            return
+
+        for i in range(len(value_pairs)):
+            self.linked_list.add_node(value_pairs[i])
+        if self.linked_list.list_length() == 0:
+            print('Size 0 polynomial created')
+
+
+    def test(self):
+        self.linked_list.list_print()
+
+
 # operations needed:
 # init
-class Polynomial(object):
-    i = 0
-    # head node of linked list
-
 # evaluate
 # add two polynomials
 # multiply two polynomials
