@@ -15,20 +15,37 @@ import sys
 class Polynomial:
 
     def __init__(self, value_pairs):
-        self.linked_list = linked_list()
+        self.poly_list = []
         if not isinstance(value_pairs, list):
             print('Not a valid argument')
             return
 
         for i in range(len(value_pairs)):
-            self.linked_list.add_node(value_pairs[i])
-        if self.linked_list.list_length() == 0:
-            print('Size 0 polynomial created')
+            if value_pairs[0] < 0:
+                print("Not a valid exponent, skipping element")
+            else:
+                self.poly_list.append(value_pairs[i])
+        self.poly_list = sorted(self.poly_list)
+
+    def evaluate(self, input_value):
+        value = 0
+        for parameter in self.poly_list:
+            value += parameter[1]*(input_value ** parameter[0])
+        return value
 
 
-    def test(self):
-        self.linked_list.list_print()
-
+    def solve(self, value):
+#TODO
+        if self.poly_list[0][0] == 1:
+            # lijn oplossen
+        elif self.poly_list[0][0] == 2:
+            #abc formule
+        elif self.poly_list[0][0] == 3:
+            # cardano
+        else:
+            print("No solution ca be found for 4th degree polynomial")
+            return 0
+         
 
 # operations needed:
 # init
