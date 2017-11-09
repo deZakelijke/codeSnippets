@@ -27,7 +27,10 @@ def householder(A):
         q = q/np.linalg.norm(q)
         P = np.identity(m)
         P[i:m,i:m] = P[i:m,i:m] - 2*np.outer(q,q)
+        print(P)
+        print(P@(np.linalg.inv(P)))
         R = P@R
+        Q = Q@np.linalg.inv(P)
 
     return Q,R
 
@@ -35,5 +38,5 @@ def householder(A):
 
 A = np.ones((3,2))
 Q,R = householder(A)
-print(Q@R)
-print(A)
+#print(R)
+#print(Q)
