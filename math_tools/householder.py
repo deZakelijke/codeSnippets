@@ -27,8 +27,14 @@ def householder(A):
         q = q/np.linalg.norm(q)
         P = np.identity(m)
         P[i:m,i:m] = P[i:m,i:m] - 2*np.outer(q,q)
+        print(P)
         R = P@R
         Q = Q@np.linalg.inv(P)
 
     return Q,R
 
+
+A = np.random.rand(8,4)
+Q,R = householder(A)
+print(R)
+print(A)
